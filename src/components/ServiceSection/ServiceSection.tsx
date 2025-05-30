@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const ServiceSection = () => {
     return (
-        <section className="py-20 md:py-28 lg:py-32 bg-[#1A1B1E]">
+        <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-2 lg:gap-2 items-center">
                     {/* Left Content */}
