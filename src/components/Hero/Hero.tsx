@@ -14,7 +14,7 @@ const Hero = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left"
       >
         <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold leading-tight tracking-tighter mb-8 md:mb-12 lg:mb-16 text-white"
-          style={{ fontFamily: 'Clash Display' }}>
+          style={{ fontFamily: 'Clash Display Semibold' }}>
           <div className="inline-block">
             DESIGN & BUILD WHAT{' '}
           </div>

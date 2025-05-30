@@ -27,7 +27,7 @@ const ServiceSection = () => {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                                 viewport={{ once: true }}
                                 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white"
-                                style={{ fontFamily: 'Clash Display' }}
+                                style={{ fontFamily: 'Clash Display Semibold' }}
                             >
                                 BRANDING
                                 <div className="flex items-center gap-4 my-2">

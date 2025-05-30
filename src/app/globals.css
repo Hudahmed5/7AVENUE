@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Clash Display Semibold";
+    src: url("https://db.onlinewebfonts.com/t/063b1ecb77f04e4643e50307b2c53d9a.eot");
+    src: url("https://db.onlinewebfonts.com/t/063b1ecb77f04e4643e50307b2c53d9a.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/063b1ecb77f04e4643e50307b2c53d9a.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/063b1ecb77f04e4643e50307b2c53d9a.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/063b1ecb77f04e4643e50307b2c53d9a.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/063b1ecb77f04e4643e50307b2c53d9a.svg#Clash Display Semibold")format("svg");
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
