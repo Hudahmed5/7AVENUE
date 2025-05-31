@@ -40,9 +40,6 @@ const Testimonials = () => {
     offset: ["start end", "end start"]
   });
 
-  // Create individual transform hooks for each testimonial
-  const progress = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
   // Testimonial 1 transforms
   const rotateX1 = useTransform(scrollYProgress, [0, 0.25], [60, 0]);
   const translateY1 = useTransform(scrollYProgress, [0, 0.25], [1000, 0]);
