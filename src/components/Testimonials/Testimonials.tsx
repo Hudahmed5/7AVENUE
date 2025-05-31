@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -39,40 +40,33 @@ const Testimonials = () => {
     offset: ["start end", "end start"]
   });
 
-  // Pre-compute transforms for each testimonial
-  const transforms = testimonials.map((_, index) => {
-    const progress = useTransform(
-      scrollYProgress,
-      [0, 1],
-      [0, 1]
-    );
+  // Create individual transform hooks for each testimonial
+  const progress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-    const rotateX = useTransform(
-      scrollYProgress,
-      [index * 0.25, index * 0.25 + 0.25],
-      [60, 0]
-    );
+  // Testimonial 1 transforms
+  const rotateX1 = useTransform(scrollYProgress, [0, 0.25], [60, 0]);
+  const translateY1 = useTransform(scrollYProgress, [0, 0.25], [1000, 0]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.15, 0.25], [0, 0.5, 1]);
+  const scale1 = useTransform(scrollYProgress, [0, 0.25], [0.8, 1]);
 
-    const translateY = useTransform(
-      scrollYProgress,
-      [index * 0.25, index * 0.25 + 0.25],
-      [1000, 0]
-    );
+  // Testimonial 2 transforms
+  const rotateX2 = useTransform(scrollYProgress, [0.25, 0.5], [60, 0]);
+  const translateY2 = useTransform(scrollYProgress, [0.25, 0.5], [1000, 0]);
+  const opacity2 = useTransform(scrollYProgress, [0.25, 0.4, 0.5], [0, 0.5, 1]);
+  const scale2 = useTransform(scrollYProgress, [0.25, 0.5], [0.8, 1]);
 
-    const opacity = useTransform(
-      scrollYProgress,
-      [index * 0.25, index * 0.25 + 0.15, index * 0.25 + 0.25],
-      [0, 0.5, 1]
-    );
+  // Testimonial 3 transforms
+  const rotateX3 = useTransform(scrollYProgress, [0.5, 0.75], [60, 0]);
+  const translateY3 = useTransform(scrollYProgress, [0.5, 0.75], [1000, 0]);
+  const opacity3 = useTransform(scrollYProgress, [0.5, 0.65, 0.75], [0, 0.5, 1]);
+  const scale3 = useTransform(scrollYProgress, [0.5, 0.75], [0.8, 1]);
 
-    const scale = useTransform(
-      scrollYProgress,
-      [index * 0.25, index * 0.25 + 0.25],
-      [0.8, 1]
-    );
-
-    return { progress, rotateX, translateY, opacity, scale };
-  });
+  // Group transforms for each testimonial
+  const transforms = [
+    { rotateX: rotateX1, translateY: translateY1, opacity: opacity1, scale: scale1 },
+    { rotateX: rotateX2, translateY: translateY2, opacity: opacity2, scale: scale2 },
+    { rotateX: rotateX3, translateY: translateY3, opacity: opacity3, scale: scale3 },
+  ];
 
   return (
     <>
