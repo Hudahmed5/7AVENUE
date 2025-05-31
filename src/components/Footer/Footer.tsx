@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { BsArrowUpRight } from 'react-icons/bs';
 
 const Footer = () => {
@@ -15,8 +14,8 @@ const Footer = () => {
         <div className="flex items-center justify-between mb-20">
           <div className="flex items-center gap-8">
             <div>
-              <p className="text-sm text-gray-400 mb-2">Let's work together</p>
-              <h2 className="text-4xl font-bold text-white">Let's work together</h2>
+              <p className="text-sm text-gray-400 mb-2">Let&apos;s work together</p>
+              <h2 className="text-4xl font-bold text-white">Let&apos;s work together</h2>
             </div>
             
             {/* Circle with arrow */}
@@ -28,15 +27,12 @@ const Footer = () => {
           {/* Social links */}
           <div className="flex gap-6">
             <Link href="https://instagram.com" className="text-white hover:text-yellow-400 transition-colors">
-              {/* <FaInstagram className="w-6 h-6" /> */}
               Instagram
             </Link>
             <Link href="https://twitter.com" className="text-white hover:text-yellow-400 transition-colors">
-              {/* <FaTwitter className="w-6 h-6" /> */}
-              Twitter
+\              Twitter
             </Link>
             <Link href="https://linkedin.com" className="text-white hover:text-yellow-400 transition-colors">
-              {/* <FaLinkedin className="w-6 h-6" /> */}
               LinkedIn
             </Link>
           </div>
@@ -45,7 +41,7 @@ const Footer = () => {
         {/* Second row */}
         <div className="text-center my-40">
           <h1 className="text-6xl font-bold text-white tracking-wide">
-            DISCOVER YOUR<br />BRAND'S — STORY
+            DISCOVER YOUR<br />BRAND&apos;S — STORY
           </h1>
         </div>
         
