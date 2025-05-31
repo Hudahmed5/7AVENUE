@@ -39,6 +39,41 @@ const Testimonials = () => {
     offset: ["start end", "end start"]
   });
 
+  // Pre-compute transforms for each testimonial
+  const transforms = testimonials.map((_, index) => {
+    const progress = useTransform(
+      scrollYProgress,
+      [0, 1],
+      [0, 1]
+    );
+
+    const rotateX = useTransform(
+      scrollYProgress,
+      [index * 0.25, index * 0.25 + 0.25],
+      [60, 0]
+    );
+
+    const translateY = useTransform(
+      scrollYProgress,
+      [index * 0.25, index * 0.25 + 0.25],
+      [1000, 0]
+    );
+
+    const opacity = useTransform(
+      scrollYProgress,
+      [index * 0.25, index * 0.25 + 0.15, index * 0.25 + 0.25],
+      [0, 0.5, 1]
+    );
+
+    const scale = useTransform(
+      scrollYProgress,
+      [index * 0.25, index * 0.25 + 0.25],
+      [0.8, 1]
+    );
+
+    return { progress, rotateX, translateY, opacity, scale };
+  });
+
   return (
     <>
     <section className="bg-[#1A1B1E] overflow-hidden" ref={containerRef}>
@@ -56,35 +91,7 @@ const Testimonials = () => {
         <div className="min-h-[200vh] relative perspective">
           <div className="sticky top-[20vh]">
             {testimonials.map((testimonial, index) => {
-              const progress = useTransform(
-                scrollYProgress,
-                [0, 1],
-                [0, 1]
-              );
-
-              const rotateX = useTransform(
-                progress,
-                [index * 0.25, index * 0.25 + 0.25],
-                [60, 0]
-              );
-
-              const translateY = useTransform(
-                progress,
-                [index * 0.25, index * 0.25 + 0.25],
-                [1000, 0]
-              );
-
-              const opacity = useTransform(
-                progress,
-                [index * 0.25, index * 0.25 + 0.15, index * 0.25 + 0.25],
-                [0, 0.5, 1]
-              );
-
-              const scale = useTransform(
-                progress,
-                [index * 0.25, index * 0.25 + 0.25],
-                [0.8, 1]
-              );
+              const { rotateX, translateY, opacity, scale } = transforms[index];
 
               return (
                 <motion.div
@@ -119,11 +126,11 @@ const Testimonials = () => {
                         {testimonial.name}
                       </h3>
                       <p className="text-gray-400">{testimonial.role}</p>
-                      <p className="text-lg text-gray-200 leading-relaxed">"{testimonial.quote}"</p>
+                      <p className="text-lg text-gray-200 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
                       <div className="h-8 relative">
                         <Image
                           src={testimonial.logo}
-                          alt={`${testimonial.name}'s company logo`}
+                          alt={`${testimonial.name}&apos;s company logo`}
                           fill
                           className="object-contain object-left brightness-0 invert"
                         />

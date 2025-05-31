@@ -29,12 +29,6 @@ const GradientTransitionSection = () => {
     [0.3, 0.5, 0.7, 0.9],
     ["#454545", "#141414", "#141414", "#454545"]
   );
-  
-  const textColor3 = useTransform(
-    scrollYProgress,
-    [0.4, 0.6, 0.8, 1.0],
-    ["#454545", "#141414", "#141414", "#454545"]
-  );
 
   return (
     <motion.section 
@@ -55,7 +49,7 @@ const GradientTransitionSection = () => {
             style={{ color: textColor2 }}
             className="text-xl text-left md:text-2xl lg:text-3xl font-normal leading-relaxed transition-colors duration-500 text-left max-w-4xl"
           >
-            We are a digital marketing agency with expertise, and we're on a mission to help you take the next step in your business.
+            We are a digital marketing agency with expertise, and we&apos;re on a mission to help you take the next step in your business.
           </motion.p>
           
         </div>

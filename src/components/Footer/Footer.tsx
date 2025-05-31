@@ -4,12 +4,12 @@ import { BsArrowUpRight } from 'react-icons/bs';
 
 const Footer = () => {
   return (
-    <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative py-16 bg-cover bg-center" style={{ backgroundImage: 'url(/img/footer_bg.jpg)', fontFamily: 'Clash Display Semibold' }}>
+    <footer className="relative py-16 bg-cover bg-center" style={{ backgroundImage: 'url(/img/footer_bg.jpg)', fontFamily: 'Clash Display Semibold' }}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70" />
       
       {/* Content container */}
-      <div className="relative container mx-auto px-4">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         {/* First row */}
         <div className="flex items-center justify-between mb-20">
           <div className="flex items-center gap-8">
@@ -20,7 +20,7 @@ const Footer = () => {
             
             {/* Circle with arrow */}
             <div className="w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center cursor-pointer hover:bg-yellow-500 transition-colors">
-              <BsArrowUpRight className="w-6 h-6" />
+              <BsArrowUpRight className="w-6 h-6 text-black" />
             </div>
           </div>
           
@@ -30,7 +30,7 @@ const Footer = () => {
               Instagram
             </Link>
             <Link href="https://twitter.com" className="text-white hover:text-yellow-400 transition-colors">
-\              Twitter
+              Twitter
             </Link>
             <Link href="https://linkedin.com" className="text-white hover:text-yellow-400 transition-colors">
               LinkedIn
