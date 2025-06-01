@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import GradientTransitionSection from './GradientTransitionSection';
+import NoiseBackground from '../NoiseBackground';
 
 const testimonials = [
   {
@@ -67,8 +68,9 @@ const Testimonials = () => {
 
   return (
     <>
-    <section className="bg-[#1A1B1E] overflow-hidden" ref={containerRef}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" style={{ fontFamily: 'Clash Display Semibold' }}>
+    <section className="bg-[#1A1B1E] overflow-hidden relative" ref={containerRef}>
+      <NoiseBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" style={{ fontFamily: 'Clash Display Semibold' }}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

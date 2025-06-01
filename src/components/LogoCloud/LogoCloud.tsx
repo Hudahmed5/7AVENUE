@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import NoiseBackground from '../NoiseBackground';
 
 const logos = [
   { src: '/img/logos/logo-1.png', alt: 'Chick-fil-A' },
@@ -14,8 +15,9 @@ const logos = [
 
 const LogoCloud = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative">
+      <NoiseBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

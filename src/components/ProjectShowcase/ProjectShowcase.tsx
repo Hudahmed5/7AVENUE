@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import NoiseBackground from '../NoiseBackground';
 
 const projects = [
   {
@@ -32,8 +33,9 @@ const projects = [
 
 const ProjectShowcase = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative">
+      <NoiseBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Column */}
           <div className="space-y-12">

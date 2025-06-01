@@ -2,11 +2,13 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import NoiseBackground from '../NoiseBackground';
 
 const ServiceSection = () => {
     return (
-        <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative">
+            <NoiseBackground />
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-2 lg:gap-2 items-center">
                     {/* Left Content */}
                     <motion.div
