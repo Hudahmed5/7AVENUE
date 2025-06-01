@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll } from 'framer-motion';
+import { useScroll } from 'framer-motion';
 import Image from 'next/image';
 import NoiseBackground from '../NoiseBackground';
 import gsap from 'gsap';
