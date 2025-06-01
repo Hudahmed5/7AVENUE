@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero/Hero';
+import HeroImage from '@/components/HeroImage/HeroImage';
 import LogoCloud from '@/components/LogoCloud/LogoCloud';
 import ServiceSection from '@/components/ServiceSection/ServiceSection';
 import ProjectShowcase from '@/components/ProjectShowcase/ProjectShowcase';
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <HeroImage />
       <LogoCloud />
       <ServiceSection />
       <ProjectShowcase />
