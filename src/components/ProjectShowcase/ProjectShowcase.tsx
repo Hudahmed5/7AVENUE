@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import GlitchImage from '../GlitchImage/GlitchImage';
 import { motion } from 'framer-motion';
 import NoiseBackground from '../NoiseBackground';
 
@@ -50,11 +50,10 @@ const ProjectShowcase = () => {
                 className="space-y-4"
               >
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                  <Image
+                  <GlitchImage
                     src={project.image}
                     alt={project.title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full"
                   />
                 </div>
                 <div className="space-y-2">
@@ -92,11 +91,10 @@ const ProjectShowcase = () => {
                 className="space-y-4"
               >
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                  <Image
+                  <GlitchImage
                     src={project.image}
                     alt={project.title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full"
                   />
                 </div>
                 <div className="space-y-2">
