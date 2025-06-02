@@ -4,6 +4,8 @@ import styles from './Card.module.css';
 import { useTransform, motion, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 
+import { MotionValue } from 'framer-motion';
+
 interface CardProps {
   i: number;
   name: string;
@@ -11,7 +13,7 @@ interface CardProps {
   quote: string;
   image: string;
   logo: string;
-  progress: any;
+  progress: MotionValue<number>;
   range: number[];
   targetScale: number;
 }
