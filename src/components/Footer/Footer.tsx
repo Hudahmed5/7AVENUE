@@ -4,28 +4,28 @@ import { BsArrowUpRight } from 'react-icons/bs';
 
 const Footer = () => {
   return (
-    <footer className="relative py-16 bg-cover bg-center" style={{ backgroundImage: 'url(/img/footer_bg.jpg)', fontFamily: 'Clash Display Semibold' }}>
+    <footer className="relative py-8 sm:py-16 bg-cover bg-center" style={{ backgroundImage: 'url(/img/footer_bg.jpg)', fontFamily: 'Clash Display Semibold' }}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70" />
       
       {/* Content container */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* First row */}
-        <div className="flex items-center justify-between mb-20">
-          <div className="flex items-center gap-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-0 mb-10 sm:mb-20">
+          <div className="flex items-center gap-4 sm:gap-8">
             <div>
-              <p className="text-sm text-gray-400 mb-2">Let&apos;s work together</p>
-              <h2 className="text-4xl font-bold text-white">Let&apos;s work together</h2>
+              <p className="text-xs sm:text-sm text-gray-400 mb-1 sm:mb-2">Let&apos;s work together</p>
+              <h2 className="text-2xl sm:text-4xl font-bold text-white">Let&apos;s work together</h2>
             </div>
             
             {/* Circle with arrow */}
-            <div className="w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center cursor-pointer hover:bg-yellow-500 transition-colors">
-              <BsArrowUpRight className="w-6 h-6 text-black" />
+            <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-yellow-400 flex items-center justify-center cursor-pointer hover:bg-yellow-500 transition-colors">
+              <BsArrowUpRight className="w-4 h-4 sm:w-6 sm:h-6 text-black" />
             </div>
           </div>
           
           {/* Social links */}
-          <div className="flex gap-6">
+          <div className="flex gap-4 sm:gap-6 text-sm sm:text-base">
             <Link href="https://instagram.com" className="text-white hover:text-yellow-400 transition-colors">
               Instagram
             </Link>
@@ -39,16 +39,16 @@ const Footer = () => {
         </div>
         
         {/* Second row */}
-        <div className="text-center my-40">
-          <h1 className="text-6xl font-bold text-white tracking-wide">
+        <div className="text-center my-20 sm:my-40">
+          <h1 className="text-4xl sm:text-6xl font-bold text-white tracking-wide">
             DISCOVER YOUR<br />BRAND&apos;S — STORY
           </h1>
         </div>
         
         {/* Third row */}
-        <div className="flex justify-between items-center">
-          <p className="text-gray-400">© 2025 7AVENUE MEDIA. All Rights Reserved.</p>
-          <Link href="/privacy-policy" className="text-white hover:text-yellow-400 transition-colors">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+          <p className="text-sm text-gray-400 text-center sm:text-left">© 2025 7AVENUE MEDIA. All Rights Reserved.</p>
+          <Link href="/privacy-policy" className="text-sm text-white hover:text-yellow-400 transition-colors">
             PRIVACY POLICY
           </Link>
         </div>

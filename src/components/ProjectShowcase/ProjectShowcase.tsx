@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import NoiseBackground from '../NoiseBackground';
@@ -9,7 +10,7 @@ const projects = [
     id: 1,
     image: '/img/projects-section-img.png',
     title: "Gary Neville's",
-    description: "Refreshing Gary Neville's digital presence"
+    description: "Spacebook"
   },
   {
     id: 2,
@@ -36,7 +37,7 @@ const ProjectShowcase = () => {
     <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative">
       <NoiseBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Column */}
           <div className="space-y-12">
             {projects.slice(0, 2).map((project) => (

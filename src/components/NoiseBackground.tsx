@@ -35,7 +35,7 @@ export default function NoiseBackground() {
         // Create more contrasted noise
         const noise = Math.random();
         const gray = noise > 0.45 ? 255 : 0; // Adjusted threshold for more white pixels
-        const alpha = 255; // Full opacity for each particle
+        const alpha = 100; // Reduced opacity for better blending
         buffer[i] =
           (alpha << 24) | // alpha
           (gray << 16) |  // red
@@ -43,9 +43,8 @@ export default function NoiseBackground() {
           gray;           // blue
       }
 
-      // Clear the canvas
-      ctx.fillStyle = '#1A1B1E';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Clear the canvas with transparency
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Scale up the noise
       ctx.imageSmoothingEnabled = false;
@@ -79,16 +78,15 @@ export default function NoiseBackground() {
     <canvas
       ref={canvasRef}
       style={{
-        position: 'fixed',
+        position: 'absolute',
         top: 0,
         left: 0,
         width: '100%',
         height: '100%',
         zIndex: 0,
-        opacity: 0.4, // Increased opacity
-        mixBlendMode: 'multiply', // Changed blend mode for better contrast
+        opacity: 0.2,
+        mixBlendMode: 'overlay',
         pointerEvents: 'none',
-        backgroundColor: '#1A1B1E',
       }}
     />
   );
