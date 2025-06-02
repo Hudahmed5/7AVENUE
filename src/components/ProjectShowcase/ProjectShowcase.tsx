@@ -50,11 +50,23 @@ const ProjectShowcase = () => {
                 className="space-y-4"
               >
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                  <GlitchImage
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full"
-                  />
+                  {project.id === 1 ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="/projects_video.mp4" type="video/mp4" />
+                    </video>
+                  ) : (
+                    <GlitchImage
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full"
+                    />
+                  )}
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-sm text-gray-400">{project.title}</h3>
@@ -91,11 +103,23 @@ const ProjectShowcase = () => {
                 className="space-y-4"
               >
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                  <GlitchImage
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full"
-                  />
+                  {project.id === 1 ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="/projects_video.mp4" type="video/mp4" />
+                    </video>
+                  ) : (
+                    <GlitchImage
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full"
+                    />
+                  )}
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-sm text-gray-400" style={{ fontFamily: 'Clash Display Semibold' }}>{project.title}</h3>
