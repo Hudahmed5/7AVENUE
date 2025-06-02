@@ -54,13 +54,18 @@ const Header = () => {
         <div className={`relative overflow-hidden ${!isAtTop ? 'rounded-[50px]' : ''}`}>
           <NoiseBackground className={!isAtTop ? 'rounded-[50px]' : ''} />
           <div className="relative z-10">
-            <div className={`flex items-center justify-between h-14 sm:h-16 md:h-20 ${
+            <div className={`flex items-center h-14 sm:h-16 md:h-20 ${
               isAtTop ? 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' : 'px-6 sm:px-8 lg:px-10'
             }`}>
               <Logo />
-              <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
+              <div className="absolute left-1/2 -translate-x-1/2 hidden md:block">
                 <Navigation />
-                <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+              </div>
+              <div className="flex items-center gap-2 sm:gap-4 md:gap-6 ml-auto">
+                <div className="md:hidden">
+                  <Navigation />
+                </div>
+                <div className="hidden md:flex items-center gap-2 sm:gap-3 md:gap-4">
                   <ThemeToggle />
                   <ContactButton />
                 </div>
