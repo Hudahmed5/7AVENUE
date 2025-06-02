@@ -2,7 +2,11 @@
 
 import { useEffect, useRef } from 'react';
 
-export default function NoiseBackground() {
+interface NoiseBackgroundProps {
+  className?: string;
+}
+
+export default function NoiseBackground({ className = '' }: NoiseBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -77,6 +81,7 @@ export default function NoiseBackground() {
   return (
     <canvas
       ref={canvasRef}
+      className={className}
       style={{
         position: 'absolute',
         top: 0,

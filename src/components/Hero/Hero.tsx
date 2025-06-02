@@ -6,7 +6,7 @@ import NoiseBackground from '../NoiseBackground';
 
 const Hero = () => {
   return (
-    <section className="bg-[#1A1B1E] relative">
+    <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative">
       <NoiseBackground />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
