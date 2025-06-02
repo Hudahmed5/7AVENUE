@@ -84,7 +84,7 @@ const HeroImage = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative overflow-hidden"
+      className="pt-0 pb-12 md:pb-16 lg:pb-20 bg-[#1A1B1E] relative overflow-hidden"
     >
       <NoiseBackground />
       <div className={`relative z-10 transition-all duration-500 ${isInView ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'}`}>
