@@ -12,12 +12,20 @@
   flex-direction: column;
   position: relative;
   top: -25%;
-  height: 500px;
-  width: 1000px;
+  height: auto;
+  width: 90vw;
+  max-width: 1000px;
   border-radius: 25px;
-  padding: 50px;
+  padding: 30px;
   transform-origin: top;
   color: white;
+}
+
+@media (min-width: 768px) {
+  .card {
+    height: 500px;
+    padding: 50px;
+  }
 }
 
 .card h2 {
@@ -29,15 +37,30 @@
 
 .body {
   display: flex;
+  flex-direction: column;
   height: 100%;
-  margin-top: 50px;
-  gap: 50px;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .body {
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 50px;
+  }
 }
 
 .description {
-  width: 40%;
+  width: 100%;
   position: relative;
-  top: 10%;
+}
+
+@media (min-width: 768px) {
+  .description {
+    width: 40%;
+    top: 10%;
+  }
 }
 
 .description p {
@@ -69,10 +92,17 @@
 
 .imageContainer {
   position: relative;
-  width: 60%;
-  height: 100%;
+  width: 100%;
+  min-height: 300px;
   border-radius: 25px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    width: 60%;
+    height: 100%;
+  }
 }
 
 .inner {
