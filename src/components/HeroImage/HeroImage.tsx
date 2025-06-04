@@ -90,7 +90,7 @@ const HeroImage = () => {
       <div className={`relative z-10 transition-all duration-500 ${isInView ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'}`}>
         <div 
           ref={imageContainerRef}
-          className="relative aspect-[16/9] overflow-hidden"
+          className="relative aspect-[16/9] overflow-hidden cursor-none"
         >
           <Image
             src="/img/hero-img.png"
@@ -102,7 +102,8 @@ const HeroImage = () => {
             className="object-cover transition-transform duration-500"
             style={{
               transform: isInView ? 'scale(1.02)' : 'scale(1)',
-              willChange: 'transform'
+              willChange: 'transform',
+              borderRadius: '30px',
             }}
           />
           
@@ -110,7 +111,8 @@ const HeroImage = () => {
             ref={buttonRef}
             className="absolute z-10 pointer-events-none"
           >
-            <button className="bg-yellow-300 hover:bg-yellow-400 rounded-full w-20 h-20 md:w-24 md:h-24 flex flex-col text-black items-center justify-center gap-1 transition-all duration-300 hover:scale-110 pointer-events-auto">
+            <button className="bg-[#FFDB71] hover:bg-[#FFDB71] rounded-full w-20 h-20 md:w-24 md:h-24 flex flex-col text-black items-center justify-center gap-1 transition-all duration-300 hover:scale-110 pointer-events-auto cursor-none"
+            style={{fontFamily: 'Space Grotesk'}}>
               <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 md:w-8 md:h-8">
                   <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286l-11.54 6.347c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
