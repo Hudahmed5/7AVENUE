@@ -5,7 +5,7 @@ import Logo from './Logo';
 import Navigation from './Navigation';
 import ThemeToggle from './ThemeToggle';
 import ContactButton from './ContactButton';
-import NoiseBackground from '../NoiseBackground';
+// import NoiseBackground from '../NoiseBackground';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -52,7 +52,7 @@ const Header = () => {
         }`}
       >
         <div className={`relative overflow-hidden ${!isAtTop ? 'rounded-[50px]' : ''}`}>
-          <NoiseBackground className={!isAtTop ? 'rounded-[50px]' : ''} />
+          {/* <NoiseBackground className={!isAtTop ? 'rounded-[50px]' : ''} /> */}
           <div className="relative z-10">
             <div className={`flex items-center h-14 sm:h-16 md:h-20 ${
               isAtTop ? 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' : 'px-6 sm:px-8 lg:px-10'

@@ -49,7 +49,7 @@ const ProjectShowcase = () => {
                 viewport={{ once: true }}
                 className="space-y-4"
               >
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
                   {project.id === 1 ? (
                     <video
                       autoPlay
@@ -102,7 +102,7 @@ const ProjectShowcase = () => {
                 viewport={{ once: true }}
                 className="space-y-4"
               >
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
                   {project.id === 1 ? (
                     <video
                       autoPlay
