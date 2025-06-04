@@ -93,7 +93,7 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-4xl font-bold text-white hover:text-yellow-300 transition-colors"
+                className="text-4xl font-bold text-white hover:text-[#FFD700] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
@@ -111,12 +111,12 @@ const Navigation = () => {
       </div>
 
       {/* Desktop menu */}
-      <nav className="hidden md:flex items-center gap-6">
+      <nav className="hidden md:flex items-center gap-6" style={{fontFamily: 'Space Grotesk'}}>
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
+            className="text-sm lg:text-base text-gray-300 hover:text-[#FFD700] transition-colors"
           >
             {item.label}
           </Link>

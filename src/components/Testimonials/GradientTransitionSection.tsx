@@ -27,14 +27,22 @@ const GradientTransitionSection = () => {
   );
 
   // Split text into individual characters with animation
-  const AnimatedText = ({ text, className }: { text: string, className: string }) => {
+  const AnimatedText = ({
+    text,
+    className,
+    style
+  }: {
+    text: string;
+    className: string;
+    style?: React.CSSProperties;
+  }) => {
     return (
       <div className={className}>
         {text.split('').map((char, i) => {
           if (char === ' ') {
             return <span key={i}>&nbsp;</span>;
           }
-          
+
           // Special handling for ® symbol
           if (char === '®') {
             return <span key={i} className="text-black text-4xl text-left md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-center">®</span>;
@@ -49,7 +57,7 @@ const GradientTransitionSection = () => {
               transition={{
                 duration: 5,
                 ease: "easeInOut",
-                repeat: Infinity,
+                // repeat: Infinity,
                 delay: i * 0.02 // Tiny delay between each letter
               }}
               style={{ display: 'inline-block' }}
@@ -62,17 +70,17 @@ const GradientTransitionSection = () => {
     );
   };
 
-  const headingText = "7AVENUE® is a global branding anddigital design agency building unicorn brands and creating people-friendly experiences.";
+  const headingText = "7AVENUE® is a global branding and digital design agency building unicorn brands and creating people-friendly experiences.";
   const paragraphText = "We are a digital marketing agency with expertise, and we're on a mission to help you take the next step in your business.";
 
   return (
-    <motion.section 
+    <motion.section
       ref={containerRef}
       style={{ background }}
       className="relative overflow-hidden py-24 md:py-32 lg:py-20 transition-all duration-1000 ease-in-out"
     >
       {/* Custom noise background with animated opacity */}
-      <motion.div 
+      <motion.div
         style={{ opacity: noiseOpacity }}
         className="absolute inset-0 z-0"
       >
@@ -81,16 +89,19 @@ const GradientTransitionSection = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-8 md:space-y-12" style={{ fontFamily: 'Clash Display Semibold' }}>
-          <AnimatedText 
-            text={headingText}
-            className="text-4xl text-left md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-center"
-          />
-          
-          <AnimatedText 
-            text={paragraphText}
-            className="text-xl text-left md:text-2xl lg:text-3xl font-normal leading-relaxed text-left max-w-4xl"
-          />
+        <div className="space-y-8 md:space-y-12">
+          <div style={{fontFamily: 'Clash Display Semibold', fontWeight: 400}}>
+            <AnimatedText
+              text={headingText}
+              className="text-left leading-tight text-center text-[57px] md:text-[99px]"
+            />
+          </div>
+          <div style={{fontFamily: 'Space Grotesk', fontWeight: 400}}>
+            <AnimatedText
+              text={paragraphText}
+              className="text-left leading-relaxed text-left text-[18px] md:text-[28px] max-w-4xl"
+            />
+          </div>
         </div>
       </div>
     </motion.section>

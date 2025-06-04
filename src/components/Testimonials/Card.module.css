@@ -45,7 +45,7 @@
 
 @media (min-width: 768px) {
   .body {
-    flex-direction: row;
+    flex-direction: row-reverse;
     margin-top: 50px;
     gap: 50px;
   }
