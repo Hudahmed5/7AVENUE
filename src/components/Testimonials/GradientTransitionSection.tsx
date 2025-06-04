@@ -30,7 +30,6 @@ const GradientTransitionSection = () => {
   const AnimatedText = ({
     text,
     className,
-    style
   }: {
     text: string;
     className: string;
