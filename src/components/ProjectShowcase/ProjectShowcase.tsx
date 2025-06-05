@@ -67,8 +67,8 @@ const ProjectShowcase = () => {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-sm text-gray-400">{project.title}</h3>
-                  <p className="text-2xl font-bold text-white" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>
+                  <h3 className="text-[#EFEFEF80] text-[14px]" style={{ fontFamily: 'Space Grotesk' }}>{project.title}</h3>
+                  <p className="text-[#F6F6F6] text-[24px] md:text-[43px] font-normal md:font-medium" style={{ fontFamily: 'Clash Display' }}>
                     {project.description}
                   </p>
                 </div>
@@ -120,8 +120,8 @@ const ProjectShowcase = () => {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-sm text-gray-400" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>{project.title}</h3>
-                  <p className="text-2xl font-bold text-white" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>
+                  <h3 className="text-[#F6F6F6] text-[14px] md:text-[18px] font-weight-[400]" style={{ fontFamily: 'Space Grotesk' }}>{project.title}</h3>
+                  <p className="text-[#F6F6F6] text-[24px] md:text-[43px] font-normal md:font-medium" style={{ fontFamily: 'Clash Display' }}>
                     {project.description}
                   </p>
                 </div>
