@@ -19,20 +19,20 @@ const Footer = () => {
             </div>
             
             {/* Circle with arrow */}
-            <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-[#FFD700] flex items-center justify-center cursor-pointer hover:bg-[#FFD700] transition-colors group">
+            <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-[#FFDB71] flex items-center justify-center cursor-pointer hover:bg-[#FFDB71] transition-colors group">
               <BsArrowUpRight className="w-4 h-4 sm:w-6 sm:h-6 text-black transform group-hover:-rotate-45 transition-transform duration-300" />
             </div>
           </div>
           
           {/* Social links */}
           <div className="flex gap-4 sm:gap-6 text-sm sm:text-base" style={{fontFamily: 'Space Grotesk'}}>
-            <Link href="https://instagram.com" className="text-white hover:text-[#FFD700] transition-colors">
+            <Link href="https://instagram.com" className="text-white hover:text-[#FFDB71] transition-colors">
               Instagram
             </Link>
-            <Link href="https://twitter.com" className="text-white hover:text-[#FFD700] transition-colors">
+            <Link href="https://twitter.com" className="text-white hover:text-[#FFDB71] transition-colors">
               Twitter
             </Link>
-            <Link href="https://linkedin.com" className="text-white hover:text-[#FFD700] transition-colors">
+            <Link href="https://linkedin.com" className="text-white hover:text-[#FFDB71] transition-colors">
               LinkedIn
             </Link>
           </div>

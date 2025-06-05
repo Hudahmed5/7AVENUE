@@ -60,7 +60,7 @@ const LogoCloud = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative overflow-hidden">
+    <section className="py-4 md:py-12 lg:py-12 bg-[#1A1B1E] relative overflow-hidden">
       <NoiseBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -72,8 +72,8 @@ const LogoCloud = () => {
           {!isMobile && (
             <>
               {/* Blur gradients */}
-              <div className="absolute left-0 top-0 bottom-0 w-[100px] bg-gradient-to-r from-[#1A1B1E] to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-[100px] bg-gradient-to-l from-[#1A1B1E] to-transparent z-10"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-[150px] bg-gradient-to-r from-[#1A1B1E]/95 via-[#1A1B1E]/60 to-transparent backdrop-blur-[2px] z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-[150px] bg-gradient-to-l from-[#1A1B1E]/95 via-[#1A1B1E]/60 to-transparent backdrop-blur-[2px] z-10"></div>
             </>
           )}
           
