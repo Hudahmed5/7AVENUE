@@ -67,8 +67,8 @@ const ProjectShowcase = () => {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-[#EFEFEF80] text-[14px]" style={{ fontFamily: 'Space Grotesk' }}>{project.title}</h3>
-                  <p className="text-[#F6F6F6] text-[24px] md:text-[43px] font-normal md:font-medium" style={{ fontFamily: 'Clash Display' }}>
+                  <h3 className="text-[#EFEFEF80] text-[14px]" style={{ fontFamily: 'Space Grotesk', lineHeight: '100%', letterSpacing: '-1px' }}>{project.title}</h3>
+                  <p className="text-[#F6F6F6] text-[24px] md:text-[43px] font-normal md:font-medium" style={{ fontFamily: 'Clash Display', lineHeight: '100%', letterSpacing: '-1px' }}>
                     {project.description}
                   </p>
                 </div>
@@ -85,7 +85,7 @@ const ProjectShowcase = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <span className="text-gray-400 tracking-wider uppercase text-[14px]" style={{ fontFamily: 'Space Grotesk', fontWeight: 500 }}>OUR WORK</span>
+              <span className="text-gray-400 tracking-wider uppercase text-[14px]" style={{ fontFamily: 'Space Grotesk', fontWeight: 500, lineHeight: '100%', letterSpacing: '-1px' }}>OUR WORK</span>
               <h2 className="font-bold text-white text-[57px] md:text-[101px]" style={{ fontFamily: 'Clash Display', fontWeight: 600, lineHeight: '100%' }}>
                 VIEW OUR PROJECTS
               </h2>
@@ -120,8 +120,8 @@ const ProjectShowcase = () => {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-[#F6F6F6] text-[14px] md:text-[18px] font-weight-[400]" style={{ fontFamily: 'Space Grotesk' }}>{project.title}</h3>
-                  <p className="text-[#F6F6F6] text-[24px] md:text-[43px] font-normal md:font-medium" style={{ fontFamily: 'Clash Display' }}>
+                  <h3 className="text-[#F6F6F6] text-[14px] md:text-[18px] font-weight-[400]" style={{ fontFamily: 'Space Grotesk', lineHeight: '100%', letterSpacing: '-1px' }}>{project.title}</h3>
+                  <p className="text-[#F6F6F6] text-[24px] md:text-[43px] font-normal md:font-medium" style={{ fontFamily: 'Clash Display', lineHeight: '100%', letterSpacing: '-1px' }}>
                     {project.description}
                   </p>
                 </div>
