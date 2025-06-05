@@ -1,30 +1,55 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import NoiseBackground from '../NoiseBackground';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const GradientTransitionSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const noiseRef = useRef<HTMLDivElement>(null);
 
-  // Background color transition with more color stops for smoother transition
-  const background = useTransform(
-    scrollYProgress,
-    [0, 0.1, 0.3, 0.5, 0.7, 1],
-    ["#1A1B1E", "#1A1B1E", "#1A1B1E", "#FFDB71", "#FFDB71", "#FFDB71"]
-  );
+  useEffect(() => {
+    if (!containerRef.current || !overlayRef.current || !noiseRef.current) return;
 
-  // Noise effect opacity
-  const noiseOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.5, 1],
-    [0.4, 0.3, 0.1, 0]
-  );
+    // Reset any existing ScrollTriggers
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 100%',
+        end: 'center center',
+        scrub: 1.5,
+        markers: false,
+        onUpdate: (self) => {
+          // Smoothly adjust noise opacity
+          const progress = self.progress;
+          gsap.set(noiseRef.current, { opacity: Math.max(0, 0.4 - (progress * 0.4)) });
+        }
+      }
+    });
+
+    // Initial setup
+    gsap.set(overlayRef.current, {
+      background: 'linear-gradient(to bottom, rgba(26,27,30,1) 0%, rgba(255,219,113,0) 100%)',
+      opacity: 1
+    });
+
+    // Animate the overlay
+    tl.to(overlayRef.current, {
+      opacity: 0,
+      duration: 1,
+      ease: 'none'
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   // Split text into words with animation
   const AnimatedText = ({
@@ -35,8 +60,29 @@ const GradientTransitionSection = () => {
     className: string;
     style?: React.CSSProperties;
   }) => {
+    const textRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      if (!textRef.current) return;
+
+      const chars = textRef.current.querySelectorAll('.char');
+      gsap.fromTo(chars,
+        { color: '#141414' },
+        {
+          color: '#454545',
+          duration: 3,
+          ease: 'none',
+          stagger: {
+            amount: 2,
+            repeat: -1,
+            yoyo: true
+          }
+        }
+      );
+    }, []);
+
     return (
-      <div className={`${className} whitespace-pre-wrap break-words`}>
+      <div ref={textRef} className={`${className} whitespace-pre-wrap break-words`}>
         {text.split(' ').map((word, wordIndex) => (
           <span key={wordIndex} className="inline-block">
             {word.split('').map((char, charIndex) => {
@@ -53,20 +99,12 @@ const GradientTransitionSection = () => {
               }
 
               return (
-                <motion.span
+                <span
                   key={`${wordIndex}-${charIndex}`}
-                  animate={{
-                    color: ["#141414", "#454545", "#141414"]
-                  }}
-                  transition={{
-                    duration: 3,
-                    ease: "easeInOut",
-                    delay: (wordIndex * word.length + charIndex) * 0.05
-                  }}
-                  style={{ display: 'inline-block' }}
+                  className="char inline-block"
                 >
                   {char}
-                </motion.span>
+                </span>
               );
             })}
             {/* Add space after each word except the last one */}
@@ -81,21 +119,30 @@ const GradientTransitionSection = () => {
   const paragraphText = "We are a digital marketing agency with expertise, and we're on a mission to help you take the next step in your business.";
 
   return (
-    <motion.section
+    <section
       ref={containerRef}
-      style={{ background }}
-      className="relative overflow-hidden py-24 md:py-32 lg:py-20 transition-all duration-1000 ease-in-out"
+      className="relative overflow-hidden py-24 md:py-32 lg:py-20 bg-[#FFDB71]"
     >
+      {/* Gradient overlay */}
+      <div
+        ref={overlayRef}
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(26,27,30,1) 0%, rgba(255,219,113,0) 100%)',
+        }}
+      />
+
       {/* Custom noise background with animated opacity */}
-      <motion.div
-        style={{ opacity: noiseOpacity }}
-        className="absolute inset-0 z-0"
+      <div
+        ref={noiseRef}
+        className="absolute inset-0 z-0 transition-opacity duration-1000"
+        style={{ opacity: 0.4 }}
       >
         <NoiseBackground />
-      </motion.div>
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-8 md:space-y-12">
           <div style={{fontFamily: 'Clash Display Semibold', fontWeight: 400}} className="max-w-[1210px] mx-auto">
             <AnimatedText
@@ -111,7 +158,7 @@ const GradientTransitionSection = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
