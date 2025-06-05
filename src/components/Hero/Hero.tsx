@@ -2,12 +2,10 @@
 
 import { motion } from 'framer-motion';
 import '@/styles/fonts.css';
-import NoiseBackground from '../NoiseBackground';
 
 const Hero = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative">
-      <NoiseBackground />
+    <section className="pt-[26px] pb-[32px] sm:pt-[68px] sm:pb-[80px] bg-[#1A1B1E] relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

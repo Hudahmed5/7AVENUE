@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import NoiseBackground from '../NoiseBackground';
 import Slider from 'react-slick';
 import type { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -61,7 +60,6 @@ const LogoCloud = () => {
 
   return (
     <section className="py-4 md:py-12 lg:py-12 bg-[#1A1B1E] relative overflow-hidden">
-      <NoiseBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

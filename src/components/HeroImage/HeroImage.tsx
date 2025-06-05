@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useScroll } from 'framer-motion';
 import Image from 'next/image';
-import NoiseBackground from '../NoiseBackground';
 import gsap from 'gsap';
 
 const HeroImage = () => {
@@ -86,7 +85,6 @@ const HeroImage = () => {
       ref={sectionRef} 
       className="pt-0 pb-4 md:pb-12 lg:pb-12 bg-[#1A1B1E] relative overflow-hidden"
     >
-      <NoiseBackground />
       <div className={`relative z-10 transition-all duration-500 ${isInView ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'}`}>
         <div 
           ref={imageContainerRef}

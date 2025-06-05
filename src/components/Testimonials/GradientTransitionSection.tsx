@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import NoiseBackground from '../NoiseBackground';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -131,15 +130,6 @@ const GradientTransitionSection = () => {
           background: 'linear-gradient(to bottom, rgba(26,27,30,1) 0%, rgba(255,219,113,0) 100%)',
         }}
       />
-
-      {/* Custom noise background with animated opacity */}
-      <div
-        ref={noiseRef}
-        className="absolute inset-0 z-0 transition-opacity duration-1000"
-        style={{ opacity: 0.4 }}
-      >
-        <NoiseBackground />
-      </div>
 
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
