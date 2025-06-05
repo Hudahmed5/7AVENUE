@@ -34,7 +34,7 @@ const projects = [
 
 const ProjectShowcase = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative">
+    <section className="py-4 md:py-12 lg:py-12 bg-[#1A1B1E] relative">
       <NoiseBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
