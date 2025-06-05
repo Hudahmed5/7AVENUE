@@ -81,9 +81,10 @@ const Navigation = () => {
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between p-4">
-            <Link href="/" className="text-2xl font-bold text-white" onClick={handleLinkClick}>
+            <Image src="/svg/7AVENUE-Logo 1.svg" alt="Logo" width={150} height={22.22} />
+            {/* <Link href="/" className="text-2xl font-bold text-white" onClick={handleLinkClick}>
               7AVENUE
-            </Link>
+            </Link> */}
             <div className="flex items-center gap-4">
               <ThemeToggle />
               <button
@@ -130,12 +131,12 @@ const Navigation = () => {
       </div>
 
       {/* Desktop menu */}
-      <nav className="hidden md:flex items-center gap-6" style={{fontFamily: 'Space Grotesk', fontWeight: 500}}>
+      <nav className="hidden md:flex items-center gap-[62px] text-[18px]" style={{fontFamily: 'Space Grotesk', fontWeight: 500}}>
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="text-sm lg:text-base text-gray-300 hover:text-[#FFD700] transition-colors"
+            className="text-[#F6F6F6] hover:text-[#FFDB71] transition-colors"
           >
             {item.label}
           </Link>
