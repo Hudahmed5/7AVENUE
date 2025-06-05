@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const ServiceSection = () => {
     return (
-        <section className="py-4 md:py-12 lg:py-12 bg-[#1A1B1E] relative">
+        <section className="py-[72px] sm:py-[100px] bg-dark-section relative">
             <style jsx global>{`
                 @keyframes blinkFade {
                     0%, 100% {
@@ -39,7 +39,7 @@ const ServiceSection = () => {
             `}</style>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-2 lg:gap-2 items-start">
+                <div className="grid lg:grid-cols-2 items-start">
                     <div className="flex flex-col justify-center h-full">
                         {/* Left Content */}
                         <motion.div

@@ -5,7 +5,7 @@ import '@/styles/fonts.css';
 
 const Hero = () => {
   return (
-    <section className="pt-[26px] pb-[32px] sm:pt-[68px] sm:pb-[80px] bg-[#1A1B1E] relative">
+    <section className="pt-[26px] pb-[32px] sm:pt-[68px] sm:pb-[80px] bg-dark-section relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

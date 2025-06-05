@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+// import NoiseBackground from '../NoiseBackground';
 import Slider from 'react-slick';
 import type { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -9,12 +10,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
 
 const logos = [
-  { src: '/img/logos/logo-1.png', alt: 'Chick-fil-A' },
-  { src: '/img/logos/logo-2.png', alt: 'Filmup' },
-  { src: '/img/logos/logo-3.png', alt: 'NHL' },
-  { src: '/img/logos/logo-4.png', alt: 'Grammy Awards' },
-  { src: '/img/logos/logo-5.png', alt: 'Yousic Play' },
-  { src: '/img/logos/logo-6.png', alt: 'BK Garage' },
+  { src: '/svg/logo-1.svg', alt: 'Chick-fil-A' },
+  { src: '/svg/logo-2.svg', alt: 'Filmup' },
+  { src: '/svg/logo-3.svg', alt: 'NHL' },
+  { src: '/svg/logo-4.svg', alt: 'Grammy Awards' },
+  { src: '/svg/logo-5.svg', alt: 'Yousic Play' },
+  { src: '/svg/logo-6.svg', alt: 'BK Garage' },
 ];
 
 // Duplicate logos for infinite effect
@@ -59,7 +60,10 @@ const LogoCloud = () => {
   };
 
   return (
-    <section className="py-4 md:py-12 lg:py-12 bg-[#1A1B1E] relative overflow-hidden">
+    <section className="pb-[72px] sm:pb-[100px] bg-dark-section relative overflow-hidden">
+      {/* Noise background */}
+      <div className="noise absolute top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -69,13 +73,9 @@ const LogoCloud = () => {
         >
           {!isMobile && (
             <>
-              {/* Blur gradients */}
-              <div className="absolute left-0 top-0 bottom-0 w-[150px] bg-gradient-to-r from-[#1A1B1E]/95 via-[#1A1B1E]/60 to-transparent backdrop-blur-[2px] z-10">
-                <div className="absolute right-0 top-0 bottom-0 w-[30px] bg-gradient-to-r from-transparent via-[#1A1B1E]/30 to-transparent blur-[2px]"></div>
-              </div>
-              <div className="absolute right-0 top-0 bottom-0 w-[150px] bg-gradient-to-l from-[#1A1B1E]/95 via-[#1A1B1E]/60 to-transparent backdrop-blur-[2px] z-10">
-                <div className="absolute left-0 top-0 bottom-0 w-[30px] bg-gradient-to-l from-transparent via-[#1A1B1E]/30 to-transparent blur-[2px]"></div>
-              </div>
+              {/* Gradient without blur but smoother transition */}
+              <div className="absolute left-0 top-0 bottom-0 w-[250px] bg-gradient-to-r from-[#1A1B1E]/90 via-[#1A1B1E]/50 to-transparent z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-[250px] bg-gradient-to-l from-[#1A1B1E]/90 via-[#1A1B1E]/50 to-transparent z-10"></div>
             </>
           )}
           
@@ -126,4 +126,4 @@ const LogoCloud = () => {
   );
 };
 
-export default LogoCloud; 
+export default LogoCloud;

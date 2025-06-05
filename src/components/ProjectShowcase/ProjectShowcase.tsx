@@ -33,7 +33,7 @@ const projects = [
 
 const ProjectShowcase = () => {
   return (
-    <section className="py-4 md:py-12 lg:py-12 bg-[#1A1B1E] relative">
+    <section className="pb-[72px] sm:pb-[100px] bg-dark-section relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-12">
           {/* Left Column */}
@@ -85,8 +85,8 @@ const ProjectShowcase = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <span className="text-gray-400 tracking-wider text-sm uppercase" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>OUR WORK</span>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>
+              <span className="text-gray-400 tracking-wider uppercase text-[14px]" style={{ fontFamily: 'Space Grotesk', fontWeight: 500 }}>OUR WORK</span>
+              <h2 className="font-bold text-white text-[57px] md:text-[101px]" style={{ fontFamily: 'Clash Display', fontWeight: 600, lineHeight: '100%' }}>
                 VIEW OUR PROJECTS
               </h2>
             </motion.div>
