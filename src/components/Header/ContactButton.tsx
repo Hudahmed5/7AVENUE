@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BsArrowRight } from 'react-icons/bs';
+import Image from 'next/image';
 
 interface ContactButtonProps {
   className?: string;
@@ -9,10 +9,17 @@ const ContactButton = ({ className = '' }: ContactButtonProps) => {
   return (
     <Link
       href="/contact"
-      className={`bg-[#FFDB71] hover:bg-[#FFDB71] px-4 sm:px-6 py-1.5 sm:py-2 text-base sm:text-base rounded-full font-medium text-black transition-all flex items-center gap-2 group ${className}`}
+      className={`bg-[#FFDB71] hover:bg-[#FFDB71] px-[16px] py-[8.5px] text-base rounded-full font-medium text-black transition-all flex items-center gap-2 group ${className}`}
+      style={{ fontFamily: 'Space Grotesk', fontWeight: 500 }}
     >
       <span>Get in touch</span>
-      <BsArrowRight className="w-3.5 h-3.5 text-black transform group-hover:-rotate-90 transition-transform duration-300" />
+      <Image 
+        src="/svg/arrow-right-normal.svg" 
+        alt="Arrow right" 
+        width={24} 
+        height={24} 
+        className="transform group-hover:-rotate-45 transition-transform duration-300"
+      />
     </Link>
   );
 };
