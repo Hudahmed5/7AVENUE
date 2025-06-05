@@ -72,8 +72,12 @@ const LogoCloud = () => {
           {!isMobile && (
             <>
               {/* Blur gradients */}
-              <div className="absolute left-0 top-0 bottom-0 w-[150px] bg-gradient-to-r from-[#1A1B1E]/95 via-[#1A1B1E]/60 to-transparent backdrop-blur-[2px] z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-[150px] bg-gradient-to-l from-[#1A1B1E]/95 via-[#1A1B1E]/60 to-transparent backdrop-blur-[2px] z-10"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-[150px] bg-gradient-to-r from-[#1A1B1E]/95 via-[#1A1B1E]/60 to-transparent backdrop-blur-[2px] z-10">
+                <div className="absolute right-0 top-0 bottom-0 w-[30px] bg-gradient-to-r from-transparent via-[#1A1B1E]/30 to-transparent blur-[2px]"></div>
+              </div>
+              <div className="absolute right-0 top-0 bottom-0 w-[150px] bg-gradient-to-l from-[#1A1B1E]/95 via-[#1A1B1E]/60 to-transparent backdrop-blur-[2px] z-10">
+                <div className="absolute left-0 top-0 bottom-0 w-[30px] bg-gradient-to-l from-transparent via-[#1A1B1E]/30 to-transparent blur-[2px]"></div>
+              </div>
             </>
           )}
           

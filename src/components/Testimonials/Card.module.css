@@ -69,11 +69,6 @@
   line-height: 1.75;
 }
 
-.description p::first-letter {
-  font-size: 28px;
-  font-family: 'Clash Display Semibold';
-}
-
 .roleContainer {
   margin-top: 20px;
 }

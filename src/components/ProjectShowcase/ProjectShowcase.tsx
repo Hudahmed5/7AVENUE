@@ -70,7 +70,7 @@ const ProjectShowcase = () => {
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-sm text-gray-400">{project.title}</h3>
-                  <p className="text-2xl font-bold text-white" style={{ fontFamily: 'Clash Display Semibold' }}>
+                  <p className="text-2xl font-bold text-white" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>
                     {project.description}
                   </p>
                 </div>
@@ -87,8 +87,8 @@ const ProjectShowcase = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <span className="text-gray-400 tracking-wider text-sm uppercase" style={{ fontFamily: 'Clash Display Semibold' }}>OUR WORK</span>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white" style={{ fontFamily: 'Clash Display Semibold' }}>
+              <span className="text-gray-400 tracking-wider text-sm uppercase" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>OUR WORK</span>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>
                 VIEW OUR PROJECTS
               </h2>
             </motion.div>
@@ -122,8 +122,8 @@ const ProjectShowcase = () => {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-sm text-gray-400" style={{ fontFamily: 'Clash Display Semibold' }}>{project.title}</h3>
-                  <p className="text-2xl font-bold text-white" style={{ fontFamily: 'Clash Display Semibold' }}>
+                  <h3 className="text-sm text-gray-400" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>{project.title}</h3>
+                  <p className="text-2xl font-bold text-white" style={{ fontFamily: 'Clash Display', fontWeight: 600 }}>
                     {project.description}
                   </p>
                 </div>
