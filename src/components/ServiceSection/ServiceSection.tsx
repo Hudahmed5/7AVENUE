@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const ServiceSection = () => {
     return (
-        <section className="py-[72px] sm:py-[100px] bg-dark-section relative">
+        <section className="pb-[72px] sm:pb-[100px] bg-dark-section relative">
             <style jsx global>{`
                 @keyframes blinkFade {
                     0%, 100% {
@@ -67,7 +67,7 @@ const ServiceSection = () => {
                                     }}
                                 >
                                     <span className="heading-underline block">BRANDING</span>
-                                    <div className="flex items-center gap-4 my-2">
+                                    <div className="flex items-center my-2">
                                         <div
                                             className="w-12 md:w-24 h-12 md:h-24 bg-[#FFDB71] rounded-full"
                                             style={{ animation: 'blinkFade 2.5s ease-in-out infinite' }}
@@ -101,7 +101,7 @@ const ServiceSection = () => {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="relative aspect-[4/4] rounded-2xl overflow-hidden">
+                        <div className="relative aspect-[4/4] rounded-2xl overflow-hidden lg:w-[102%] lg:-ml-[2%]">
                             <Image
                                 src="/img/service-section-img.png"
                                 alt="Service section image"
