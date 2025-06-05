@@ -5,7 +5,6 @@ import { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import Card from './Card';
 import GradientTransitionSection from './GradientTransitionSection';
-import NoiseBackground from '../NoiseBackground';
 
 const testimonials = [
   {
@@ -44,7 +43,6 @@ const Testimonials = () => {
   return (
     <>
       <section ref={container} className="bg-[#1A1B1E] relative">
-        <NoiseBackground />
         <div className="relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

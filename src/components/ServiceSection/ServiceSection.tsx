@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import NoiseBackground from '../NoiseBackground';
 
 const ServiceSection = () => {
     return (
@@ -39,7 +38,6 @@ const ServiceSection = () => {
                 }
             `}</style>
 
-            <NoiseBackground />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-2 lg:gap-2 items-start">
                     <div className="flex flex-col justify-center h-full">
