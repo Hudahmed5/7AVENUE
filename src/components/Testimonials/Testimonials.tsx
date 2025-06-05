@@ -42,7 +42,7 @@ const Testimonials = () => {
 
   return (
     <>
-      <section ref={container} className="bg-[#1A1B1E] relative">
+      <section ref={container} className="bg-dark-section relative">
         <div className="relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

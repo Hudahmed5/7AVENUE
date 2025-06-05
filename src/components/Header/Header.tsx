@@ -44,9 +44,9 @@ const Header = () => {
       <header 
         className={`w-full ${
           isAtTop 
-            ? 'bg-[#1A1B1E] transition-all duration-300' 
+            ? 'bg-dark-section transition-all duration-300' 
             : isVisible 
-              ? 'max-w-4xl translate-y-4 bg-[#0f0f0f]/30 backdrop-blur-[10px] rounded-full shadow-md transition-all duration-300'
+              ? 'max-w-4xl translate-y-4 bg-header-transparent rounded-full shadow-md transition-all duration-300'
               : 'max-w-4xl -translate-y-full bg-transparent transition-none'
         }`}
       >

@@ -120,7 +120,7 @@ const GradientTransitionSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden py-24 md:py-32 lg:py-20 bg-[#FFDB71]"
+      className="relative overflow-hidden py-[72px] sm:py-[100px] bg-yellow-section"
     >
       {/* Gradient overlay */}
       <div
