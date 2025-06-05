@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
 import ThemeToggle from './ThemeToggle';
 import ContactButton from './ContactButton';
@@ -61,20 +62,13 @@ const Navigation = () => {
           className="p-2 hover:opacity-70 transition-opacity"
           aria-label="Toggle menu"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6 text-white"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
+          <Image 
+            src="/svg/nav_menu.svg" 
+            alt="Menu" 
+            width={24} 
+            height={24}
+            className="brightness-0 invert"
+          />
         </button>
       </div>
 
@@ -117,7 +111,8 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-4xl font-bold text-white hover:text-[#FFD700] transition-colors"
+                className="text-[43px] text-white hover:text-[#FFD700] transition-colors"
+                style={{ fontFamily: 'Clash Display', fontWeight: 500 }}
                 onClick={handleLinkClick}
               >
                 {item.label}
@@ -126,7 +121,7 @@ const Navigation = () => {
           </nav>
 
           {/* Bottom section with contact button */}
-          <div className="mt-auto p-4">
+          <div className="mt-[28px] p-2">
             <div className="inline-block">
               <ContactButton className="text-xl py-2.5 px-8" />
             </div>
@@ -135,7 +130,7 @@ const Navigation = () => {
       </div>
 
       {/* Desktop menu */}
-      <nav className="hidden md:flex items-center gap-6" style={{fontFamily: 'Space Grotesk'}}>
+      <nav className="hidden md:flex items-center gap-6" style={{fontFamily: 'Space Grotesk', fontWeight: 500}}>
         {navItems.map((item) => (
           <Link
             key={item.href}
