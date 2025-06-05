@@ -32,18 +32,22 @@ const Card = ({ i, name, role, quote, image, logo, progress, range, targetScale 
     <div ref={container} className={styles.cardContainer}>
       <motion.div 
         style={{ 
-          backgroundColor: '#2A2B2E',
+          backgroundColor: '#3D3D3D',
           scale, 
           top: `calc(-5vh + ${i * 25}px)`
         }} 
         className={styles.card}
       >
-        <h2>{name}</h2>
         <div className={styles.body}>
           <div className={styles.description}>
-            <p>{quote}</p>
+          <h2 className='text-[24px] md:text-[43px]'
+          style={{ 
+            fontFamily: 'Clash Display Semibold',
+            lineHeight: '100%', 
+            letterSpacing: '-1px' }}>{name}</h2>
+          <p className={styles.role} style={{fontFamily: 'Space Grotesk'}}>{role}</p>
+            <p style={{fontFamily: 'Space Grotesk'}}>{quote}</p>
             <div className={styles.roleContainer}>
-              <p className={styles.role}>{role}</p>
               <div className={styles.logo}>
                 <Image
                   src={logo}

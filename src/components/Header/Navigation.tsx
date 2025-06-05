@@ -1,24 +1,49 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import ThemeToggle from './ThemeToggle';
 import ContactButton from './ContactButton';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Prevent scrolling when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+  // Improved scroll lock implementation
+  const toggleScrollLock = useCallback((lock: boolean) => {
+    if (lock) {
+      // Store the current scroll position
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
     } else {
-      document.body.style.overflow = 'unset';
+      // Restore the scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
+  }, []);
+
+  useEffect(() => {
+    toggleScrollLock(isMenuOpen);
+    
+    // Cleanup function
     return () => {
-      document.body.style.overflow = 'unset';
+      if (isMenuOpen) {
+        toggleScrollLock(false);
+      }
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, toggleScrollLock]);
+
+  const handleMenuToggle = useCallback(() => {
+    setIsMenuOpen(prev => !prev);
+  }, []);
+
+  const handleLinkClick = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
 
   const navItems = [
     { label: 'Work', href: '/work' },
@@ -32,7 +57,7 @@ const Navigation = () => {
         <ThemeToggle />
         {/* Mobile menu button */}
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={handleMenuToggle}
           className="p-2 hover:opacity-70 transition-opacity"
           aria-label="Toggle menu"
         >
@@ -55,20 +80,20 @@ const Navigation = () => {
 
       {/* Mobile menu overlay */}
       <div 
-        className={`md:hidden fixed inset-0 bg-[#1A1B1E] z-50 transition-transform duration-300 ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`md:hidden fixed inset-0 bg-[#1A1B1E] z-50 transition-all duration-300 ease-in-out transform ${
+          isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
       >
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between p-4">
-            <Link href="/" className="text-2xl font-bold text-white" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/" className="text-2xl font-bold text-white" onClick={handleLinkClick}>
               7AVENUE
             </Link>
             <div className="flex items-center gap-4">
               <ThemeToggle />
               <button
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleMenuToggle}
                 className="p-2 hover:opacity-70 transition-opacity"
                 aria-label="Close menu"
               >
@@ -93,7 +118,7 @@ const Navigation = () => {
                 key={item.href}
                 href={item.href}
                 className="text-4xl font-bold text-white hover:text-[#FFD700] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleLinkClick}
               >
                 {item.label}
               </Link>
@@ -101,7 +126,7 @@ const Navigation = () => {
           </nav>
 
           {/* Bottom section with contact button */}
-          <div className="p-4">
+          <div className="mt-auto p-4">
             <div className="inline-block">
               <ContactButton className="text-xl py-2.5 px-8" />
             </div>

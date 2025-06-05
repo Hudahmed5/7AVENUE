@@ -71,7 +71,7 @@ const ServiceSection = () => {
                                     <span className="heading-underline block">BRANDING</span>
                                     <div className="flex items-center gap-4 my-2">
                                         <div
-                                            className="w-24 h-24 bg-[#FFDB71] rounded-full"
+                                            className="w-12 md:w-24 h-12 md:h-24 bg-[#FFDB71] rounded-full"
                                             style={{ animation: 'blinkFade 2.5s ease-in-out infinite' }}
                                         ></div>
                                         <span className="heading-underline">VIDEO</span>
