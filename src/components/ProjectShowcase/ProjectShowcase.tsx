@@ -37,7 +37,7 @@ const ProjectShowcase = () => {
     <section className="py-4 md:py-12 lg:py-12 bg-[#1A1B1E] relative">
       <NoiseBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-12">
           {/* Left Column */}
           <div className="space-y-12">
             {projects.slice(0, 2).map((project) => (
