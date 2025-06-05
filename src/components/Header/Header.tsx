@@ -47,8 +47,8 @@ const Header = () => {
           isAtTop 
             ? 'bg-[#1A1B1E]' 
             : isVisible 
-              ? 'max-w-7xl translate-y-4 bg-[#1A1B1E]/80 backdrop-blur-md rounded-[50px] shadow-lg' 
-              : 'max-w-7xl -translate-y-full bg-transparent'
+              ? 'max-w-4xl translate-y-4 bg-[#0f0f0f]/30 backdrop-blur-[10px] rounded-full shadow-md'
+              : 'max-w-4xl -translate-y-full bg-transparent'
         }`}
       >
         <div className={`relative overflow-hidden ${!isAtTop ? 'rounded-[50px]' : ''}`}>

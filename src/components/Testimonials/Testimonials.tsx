@@ -50,7 +50,7 @@ const Testimonials = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center pt-20 mb-20"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center pt-12 mb-12"
             style={{ fontFamily: 'Clash Display Semibold' }}
           >
             KIND WORDS

@@ -6,7 +6,7 @@ import NoiseBackground from '../NoiseBackground';
 
 const ServiceSection = () => {
     return (
-        <section className="py-12 md:py-16 lg:py-20 bg-[#1A1B1E] relative">
+        <section className="py-4 md:py-12 lg:py-12 bg-[#1A1B1E] relative">
             <style jsx global>{`
                 @keyframes blinkFade {
                     0%, 100% {
@@ -20,6 +20,7 @@ const ServiceSection = () => {
                 .heading-underline {
                     position: relative;
                     cursor: pointer;
+                    display: inline-block;
                 }
 
                 .heading-underline::after {
@@ -27,10 +28,10 @@ const ServiceSection = () => {
                     position: absolute;
                     width: 0;
                     height: 4px;
-                    bottom: 0;
+                    bottom: -4px;
                     left: 0;
                     background-color: rgb(255, 255, 255);
-                    transition: width 0.3s ease-in-out;
+                    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
                 }
 
                 .heading-underline:hover::after {

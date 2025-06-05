@@ -14,12 +14,12 @@ const HeroImage = () => {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["0 1", "1 0"]
   });
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (latest: number) => {
-      setIsInView(latest > 0.1 && latest < 0.9);
+      setIsInView(latest > 0.3 && latest < 0.7);
     });
     return () => unsubscribe();
   }, [scrollYProgress]);
@@ -84,7 +84,7 @@ const HeroImage = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="pt-0 pb-12 md:pb-16 lg:pb-20 bg-[#1A1B1E] relative overflow-hidden"
+      className="pt-0 pb-4 md:pb-12 lg:pb-12 bg-[#1A1B1E] relative overflow-hidden"
     >
       <NoiseBackground />
       <div className={`relative z-10 transition-all duration-500 ${isInView ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'}`}>
