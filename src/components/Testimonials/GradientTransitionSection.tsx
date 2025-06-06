@@ -90,7 +90,7 @@ const GradientTransitionSection = () => {
                 return (
                   <span 
                     key={`${wordIndex}-${charIndex}`} 
-                    className="text-black text-4xl text-left md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+                    className="text-black leading-tight"
                   >
                     ®
                   </span>
@@ -120,7 +120,7 @@ const GradientTransitionSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden py-[72px] sm:py-[100px] bg-yellow-section"
+      className="relative overflow-hidden sm:p-[120px] py-[48px] px-[16px] bg-yellow-section"
     >
       {/* Gradient overlay */}
       <div
@@ -132,15 +132,15 @@ const GradientTransitionSection = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 max-w-7xl mx-auto sm:p-[120px] p-16">
         <div className="space-y-8 md:space-y-12">
-          <div style={{fontFamily: "'Clash Display'", fontWeight: 500}} className="max-w-[1210px] mx-auto">
+          <div className="sm:pb-[67px] pb-[19px] max-w-[1210px] mx-auto" style={{fontFamily: "'Clash Display'", fontWeight: 500, lineHeight: '100%', letterSpacing: '-1px'}}>
             <AnimatedText
               text={headingText}
-              className="text-left leading-[1.1] text-[57px] md:text-[99px]"
+              className="text-left leading-[1.1] text-[43px] sm:text-[101px]"
             />
           </div>
-          <div style={{fontFamily: 'Space Grotesk', fontWeight: 400}}>
+          <div style={{fontFamily: 'Space Grotesk', fontWeight: 400, lineHeight: '100%', letterSpacing: '-1px'}}>
             <AnimatedText
               text={paragraphText}
               className="text-left leading-relaxed text-[18px] md:text-[28px] max-w-4xl"

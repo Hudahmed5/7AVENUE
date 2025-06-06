@@ -4,7 +4,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 
 const Footer = () => {
   return (
-    <footer className="relative pt-20 sm:pt-24 pb-8 sm:pb-12 bg-cover bg-center" style={{ backgroundImage: 'url(/img/footer_bg.jpg)', fontFamily: 'Clash Display Semibold' }}>
+    <footer className="relative pt-[48px] sm:pt-[120px] pb-[12px] sm:pb-[50px] px-[16px] sm:px-[120px] bg-cover bg-center" style={{ backgroundImage: 'url(/img/footer_bg.jpg)', fontFamily: 'Clash Display Semibold' }}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70" />
       
