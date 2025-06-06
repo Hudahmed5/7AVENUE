@@ -24,7 +24,13 @@
 @media (min-width: 768px) {
   .card {
     height: 500px;
-    padding: 50px;
+    padding: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    height: 500px;
+    padding: 16px;
   }
 }
 

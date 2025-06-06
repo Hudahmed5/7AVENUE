@@ -48,7 +48,7 @@ const Testimonials = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="font-bold text-white text-center pt-12 text-[57px] md:text-[101px]"
+            className="font-bold text-white text-center pt-[20px]  text-[57px] md:text-[101px]"
           style={{ 
             fontFamily: 'Clash Display Semibold',
             lineHeight: '100%', 
