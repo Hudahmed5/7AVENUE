@@ -7,7 +7,7 @@ import Slider from 'react-slick';
 import type { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useEffect, useState, memo } from 'react';
+import { useEffect, useState } from 'react';
 
 const logos = [
   { src: '/svg/logo-1.svg', alt: 'Chick-fil-A' },
@@ -20,18 +20,6 @@ const logos = [
 
 // Duplicate logos for infinite effect
 const extendedLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
-
-const LogoImage = memo(({ src, alt }: { src: string; alt: string }) => (
-  <Image
-    src={src}
-    alt={alt}
-    fill
-    sizes="(max-width: 768px) 33vw, (max-width: 1200px) 20vw, 200px"
-    className="object-contain brightness-0 invert"
-  />
-));
-
-LogoImage.displayName = 'LogoImage';
 
 const LogoCloud = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -101,7 +89,12 @@ const LogoCloud = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="w-full h-20 relative grayscale hover:grayscale-0 transition-all duration-300"
                 >
-                  <LogoImage src={logo.src} alt={logo.alt} />
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain brightness-0 invert"
+                  />
                 </motion.div>
               ))}
             </div>
@@ -116,7 +109,12 @@ const LogoCloud = () => {
                   className="px-4"
                 >
                   <div className="w-[150px] h-[70px] md:w-[200px] md:h-[100px] relative grayscale hover:grayscale-0 transition-all duration-300">
-                    <LogoImage src={logo.src} alt={logo.alt} />
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      fill
+                      className="object-contain brightness-0 invert"
+                    />
                   </div>
                 </motion.div>
               ))}
@@ -128,4 +126,4 @@ const LogoCloud = () => {
   );
 };
 
-export default memo(LogoCloud);
+export default LogoCloud;
