@@ -84,7 +84,7 @@ const ServiceSection = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 0.4 }}
                                     viewport={{ once: true }}
-                                    className="text-gray-400 leading-relaxed max-w-xl"
+                                    className="text-gray-400 leading-relaxed max-w-xl pb-[32px]"
                                     style={{ fontFamily: 'Space Grotesk', fontSize: '18px', lineHeight: '100%', letterSpacing: '-1px', fontWeight: 400 }}
                                 >
                                     7AVENUE® is a global branding and digital design agency building products, services, and eCommerce experiences that turn cultural values into company value. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
