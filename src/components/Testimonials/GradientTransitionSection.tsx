@@ -8,42 +8,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 const GradientTransitionSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const noiseRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current || !overlayRef.current || !noiseRef.current) return;
+    if (!containerRef.current) return;
 
     // Reset any existing ScrollTriggers
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 100%',
-        end: 'center center',
-        scrub: 1.5,
-        markers: false,
-        onUpdate: (self) => {
-          // Smoothly adjust noise opacity
-          const progress = self.progress;
-          gsap.set(noiseRef.current, { opacity: Math.max(0, 0.4 - (progress * 0.4)) });
+    // Create the color transition animation
+    gsap.fromTo(containerRef.current,
+      { 
+        backgroundColor: '#1A1B1E' // Dark color (matching your previous dark state)
+      },
+      {
+        backgroundColor: '#FFDB71', // Yellow color (matching your yellow-section class)
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top', // Start when the top of section reaches top of viewport
+          end: 'top -10%', // Complete shortly after section is fully visible
+          scrub: 2, // Slower, smoother transition
+          markers: false,
         }
       }
-    });
-
-    // Initial setup
-    gsap.set(overlayRef.current, {
-      background: 'linear-gradient(to bottom, rgba(26,27,30,1) 0%, rgba(255,219,113,0) 100%)',
-      opacity: 1
-    });
-
-    // Animate the overlay
-    tl.to(overlayRef.current, {
-      opacity: 0,
-      duration: 1,
-      ease: 'none'
-    });
+    );
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -120,21 +107,12 @@ const GradientTransitionSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden sm:p-[120px] py-[48px] px-[16px] bg-yellow-section"
+      className="relative overflow-hidden sm:p-[120px] py-[48px] px-[16px]"
     >
-      {/* Gradient overlay */}
-      <div
-        ref={overlayRef}
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(26,27,30,1) 0%, rgba(255,219,113,0) 100%)',
-        }}
-      />
-
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto sm:p-[120px] p-16">
-        <div className="space-y-8 md:space-y-12">
-          <div className="sm:pb-[67px] pb-[19px] max-w-[1210px] mx-auto" style={{fontFamily: "'Clash Display'", fontWeight: 500, lineHeight: '100%', letterSpacing: '-1px'}}>
+      <div className="relative z-20 max-w-7xl mx-auto">
+        <div className="">
+          <div className="sm:pb-[67px] pb-[19px] max-w-[1210px]" style={{fontFamily: "'Clash Display'", fontWeight: 500, lineHeight: '100%', letterSpacing: '-1px'}}>
             <AnimatedText
               text={headingText}
               className="text-left leading-[1.1] text-[43px] sm:text-[101px]"
