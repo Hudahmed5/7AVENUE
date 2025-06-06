@@ -12,7 +12,7 @@ const testimonials = [
     name: 'Adedamola Elujoba',
     role: 'CEO, Zendwallet',
     image: '/svg/cards_img.svg',
-    quote: '7AVENUE played a key role in transforming the Yousicplay brand and digital experience, helping us elevate our presence and create a more engaging, impactful platform. They truly know how to turn vision into reality.',
+    quote: '7AVENUE played a key role in transforming the Yousicplay brand and digital experience, helping us elevate our presence and create a more engaging platform.',
     logo: '/svg/cards_logo.svg'
   },
   {

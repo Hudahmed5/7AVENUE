@@ -18,16 +18,25 @@ const GradientTransitionSection = () => {
     // Create the color transition animation
     gsap.fromTo(containerRef.current,
       { 
-        backgroundColor: '#1A1B1E' // Dark color (matching your previous dark state)
+        backgroundColor: '#1A1B1E', // Dark color (matching your previous dark state)
+        immediateRender: true
       },
       {
         backgroundColor: '#FFDB71', // Yellow color (matching your yellow-section class)
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top top', // Start when the top of section reaches top of viewport
-          end: 'top -10%', // Complete shortly after section is fully visible
+          start: 'top center', // Start when the top of section reaches center of viewport
+          end: 'bottom center', // End when bottom of section reaches center of viewport
           scrub: 2, // Slower, smoother transition
           markers: false,
+          toggleActions: 'play none none reverse',
+          onEnter: () => {
+            // Force the animation to play when section comes into view
+            gsap.to(containerRef.current, {
+              backgroundColor: '#FFDB71',
+              duration: 1
+            });
+          }
         }
       }
     );
