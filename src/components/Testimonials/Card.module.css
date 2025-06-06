@@ -1,29 +1,30 @@
 .cardContainer {
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: sticky;
   top: 0px;
+  padding-top: 5vh;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   position: relative;
-  top: -25%;
   height: auto;
   width: 90vw;
   max-width: 1230px;
   border-radius: 25px;
   padding: 30px;
-  transform-origin: top;
+  transform-origin: center;
   color: white;
+  transition: all 0.5s ease-in-out;
 }
 
 @media (min-width: 768px) {
   .card {
-    height: 500px;
+    height: 450px;
     padding: 32px;
   }
 }
@@ -97,6 +98,13 @@
   min-height: 300px;
   border-radius: 25px;
   overflow: hidden;
+}
+
+@media (min-width: 321px) and (max-width: 767px) {
+  .imageContainer {
+    min-height: 250px;
+    height: 250px;
+  }
 }
 
 @media (min-width: 768px) {
