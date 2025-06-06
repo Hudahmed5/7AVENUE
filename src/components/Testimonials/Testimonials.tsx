@@ -11,25 +11,25 @@ const testimonials = [
     id: 1,
     name: 'Adedamola Elujoba',
     role: 'CEO, Zendwallet',
-    image: '/img/testimonial.png',
+    image: '/svg/cards_img.svg',
     quote: '7AVENUE played a key role in transforming the Yousicplay brand and digital experience, helping us elevate our presence and create a more engaging, impactful platform. They truly know how to turn vision into reality.',
-    logo: '/img/logos/testimonial-logo.png'
+    logo: '/svg/cards_logo.svg'
   },
   {
     id: 2,
     name: 'John Smith',
     role: 'Founder, TechCorp',
-    image: '/img/testimonial.png',
+    image: '/svg/cards_img.svg',
     quote: 'Working with 7AVENUE has been transformative for our business. Their attention to detail and innovative approach helped us achieve remarkable results.',
-    logo: '/img/logos/testimonial-logo.png'
+    logo: '/svg/cards_logo.svg'
   },
   {
     id: 3,
     name: 'Sarah Johnson',
     role: 'Marketing Director, InnovateCo',
-    image: '/img/testimonial.png',
+    image: '/svg/cards_img.svg',
     quote: 'The team at 7AVENUE brought our vision to life with exceptional creativity and technical expertise. They exceeded our expectations in every way.',
-    logo: '/img/logos/testimonial-logo.png'
+    logo: '/svg/cards_logo.svg'
   }
 ];
 
@@ -59,15 +59,17 @@ const Testimonials = () => {
           </motion.h2>
 
           {testimonials.map((testimonial, i) => {
-            const targetScale = 1 - (testimonials.length - i) * 0.05;
+            const reversedIndex = testimonials.length - 1 - i;
+            const targetScale = 0.9 + (i * 0.05);
             return (
               <Card
                 key={testimonial.id}
-                i={i}
+                i={reversedIndex}
                 {...testimonial}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
+                totalCards={testimonials.length}
               />
             );
           })}

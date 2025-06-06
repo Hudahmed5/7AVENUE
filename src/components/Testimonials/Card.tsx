@@ -16,9 +16,10 @@ interface CardProps {
   progress: MotionValue<number>;
   range: number[];
   targetScale: number;
+  totalCards: number;
 }
 
-const Card = ({ i, name, role, quote, image, logo, progress, range, targetScale }: CardProps) => {
+const Card = ({ i, name, role, quote, image, logo, progress, range, targetScale, totalCards }: CardProps) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -34,7 +35,8 @@ const Card = ({ i, name, role, quote, image, logo, progress, range, targetScale 
         style={{ 
           backgroundColor: '#3D3D3D',
           scale, 
-          top: `calc(-5vh + ${i * 25}px)`
+          top: `calc(${i * 8}vh)`,
+          zIndex: totalCards - i
         }} 
         className={styles.card}
       >
