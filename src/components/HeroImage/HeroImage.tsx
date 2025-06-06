@@ -34,7 +34,7 @@ const HeroImage = () => {
       bounds = section.getBoundingClientRect();
     };
 
-    // Initial position at center
+    // Initial position at center and button
     gsap.set(button, {
       xPercent: -50,
       yPercent: -50,
