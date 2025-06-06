@@ -30,7 +30,7 @@
 }
 @media (max-width: 768px) {
   .card {
-    height: 500px;
+    height: 600px;
     padding: 16px;
   }
 }
@@ -101,10 +101,11 @@
 }
 
 @media (min-width: 321px) and (max-width: 767px) {
+  /* .card-image,
   .imageContainer {
     min-height: 250px;
     height: 250px;
-  }
+  } */
 }
 
 @media (min-width: 768px) {

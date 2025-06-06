@@ -110,7 +110,7 @@ const GradientTransitionSection = () => {
       className="relative overflow-hidden sm:p-[120px] py-[48px] px-[16px]"
     >
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto">
+      <div className="relative z-20">
         <div className="">
           <div className="sm:pb-[67px] pb-[19px] max-w-[1210px]" style={{fontFamily: "'Clash Display'", fontWeight: 500, lineHeight: '100%', letterSpacing: '-1px'}}>
             <AnimatedText

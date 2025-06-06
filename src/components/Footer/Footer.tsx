@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-black/70" />
       
       {/* Content container */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto">
         {/* First row */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-0 mb-10 sm:mb-20">
           <div className="flex items-center gap-4 sm:gap-8">
