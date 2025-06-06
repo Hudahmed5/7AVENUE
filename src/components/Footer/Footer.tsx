@@ -40,7 +40,7 @@ const Footer = () => {
         
         {/* Second row */}
         <div className="text-center my-20 sm:my-40">
-          <h1 className="text-white tracking-wide text-[57px] md:text-[101px]"
+          <h1 className="text-white tracking-wide text-[32px] md:text-[101px]"
           style={{ 
             fontFamily: 'Clash Display Semibold',
             lineHeight: '100%', 

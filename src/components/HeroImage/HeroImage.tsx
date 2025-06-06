@@ -103,8 +103,8 @@ const HeroImage = () => {
             src="/img/hero-img.png"
             alt="Hero image"
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1536px) 90vw, 1920px"
-            quality={100}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1920px"
+            quality={85}
             priority
             className="object-cover transition-transform duration-500"
             style={{
