@@ -18,25 +18,16 @@ const GradientTransitionSection = () => {
     // Create the color transition animation
     gsap.fromTo(containerRef.current,
       { 
-        backgroundColor: '#1A1B1E', // Dark color (matching your previous dark state)
-        immediateRender: true
+        backgroundColor: '#1A1B1E' // Dark color (matching your previous dark state)
       },
       {
         backgroundColor: '#FFDB71', // Yellow color (matching your yellow-section class)
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top center', // Start when the top of section reaches center of viewport
-          end: 'bottom center', // End when bottom of section reaches center of viewport
+          start: 'top top', // Start when the top of section reaches top of viewport
+          end: 'top -10%', // Complete shortly after section is fully visible
           scrub: 2, // Slower, smoother transition
           markers: false,
-          toggleActions: 'play none none reverse',
-          onEnter: () => {
-            // Force the animation to play when section comes into view
-            gsap.to(containerRef.current, {
-              backgroundColor: '#FFDB71',
-              duration: 1
-            });
-          }
         }
       }
     );
@@ -119,7 +110,7 @@ const GradientTransitionSection = () => {
       className="relative overflow-hidden sm:p-[120px] py-[48px] px-[16px]"
     >
       {/* Content */}
-      <div className="relative z-20">
+      <div className="relative z-20 max-w-7xl mx-auto">
         <div className="">
           <div className="sm:pb-[67px] pb-[19px] max-w-[1210px]" style={{fontFamily: "'Clash Display'", fontWeight: 500, lineHeight: '100%', letterSpacing: '-1px'}}>
             <AnimatedText
